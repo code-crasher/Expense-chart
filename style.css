@@ -123,11 +123,13 @@ h1 {
 .total p:nth-child(2) {
   font-size: 1.25rem;
   font-weight: 700;
+  margin-top:.5rem;
 }
 .percentage {
   text-align: right;
 }
 .percentage p:nth-child(1) {
+margin-bottom:.5rem;
   font-weight: 700;
 }
 .attribution {
