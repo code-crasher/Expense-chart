@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 :root {
   --clr-primary-150: hsl(10, 79%, 65%);
   --clr-primary-100: hsl(10, 79%, 90%);
@@ -8,6 +9,11 @@
   --clr-neutral-300: hsl(28, 10%, 53%);
   --clr-neutral-100: hsl(27, 66%, 92%);
   --clr-neutral-200: hsl(33, 100%, 98%);
+
+  --ff-sans: "DM Sans", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
 }
 *,
 *::before,
@@ -17,102 +23,98 @@
   box-sizing: border-box;
 }
 body {
-  font-size:18px;
+  font-size: 1rem;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-400);
   background-color: var(--clr-neutral-100);
-  font-weight:400;
-  font-family: "DM Sans", sans-serif;
 }
+.text-light {
+  color: var(--clr-neutral-300);
+}
+.text-dark {
+  color: var(--clr-neutral-400);
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
+.card__balance,
+.card__details {
+  --padding: 1em;
+  --border-radius: 6px;
+}
 .card__balance {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-items: center;
   background-color: var(--clr-primary-150);
-  padding: 1em;
-  border-radius: 10px;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
   margin-bottom: 1rem;
   color: var(--clr-neutral-100);
 }
 .card__balance p:nth-child(2) {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--fw-700);
 }
 .card__details {
   background-color: var(--clr-neutral-200);
-  padding: 1em;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
+  padding-inline: var(--padding);
+  padding-block: calc(var(--padding) + 0.5em);
 }
-.card__balance-circle {
-  position: relative;
-  width: 20px;
+#logo-svg {
+  width: 40px;
   aspect-ratio: 1;
-  background-color: var(--clr-neutral-400);
-  border-radius: 50vmax;
-}
-.card__balance-circle::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--clr-neutral-100);
-  border-radius: 50vmax;
-  left: -10px;
-  z-index: 2;
 }
 h1 {
   font-size: 1.25rem;
-  font-weight: 700;
-}
-.bars {
-  display: flex;
-  justify-content: space-between;
-  padding-block: 1.5rem;
+  font-weight: var(--fw-700);
 }
 .bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  height: 150px;
+  position: relative;
   cursor: pointer;
 }
-.bar__data {
-  width: 30px;
-  border-radius: 3px;
-  cursor: pointer;
-  z-index: 2;
+.bar:nth-child(2),
+.bar:nth-child(1),
+.bar:nth-child(4),
+.bar:nth-child(5),
+.bar:nth-child(6),
+.bar:nth-child(7) {
+  fill: var(--clr-primary-150);
 }
-.bar:nth-child(2) .bar__data,
-.bar:nth-child(1) .bar__data,
-.bar:nth-child(5) .bar__data,
-.bar:nth-child(6) .bar__data,
-.bar:nth-child(7) .bar__data {
-  background-color: var(--clr-primary-150);
+.bar:nth-child(3) {
+  fill: var(--clr-primary-200);
 }
-.bar:nth-child(3) .bar__data {
-  background-color: var(--clr-primary-200);
+.bar:nth-child(2):hover,
+.bar:nth-child(1):hover,
+.bar:nth-child(4):hover,
+.bar:nth-child(5):hover,
+.bar:nth-child(6):hover,
+.bar:nth-child(7):hover {
+  opacity: 0.8;
 }
-.bar:nth-child(4) .bar__data {
-  background-color: var(--clr-primary-100);
+.bar:nth-child(3):hover {
+  opacity: 0.8;
 }
-
-.bar__amount {
+.x-axis text {
+  fill: var(--clr-neutral-300);
+  font-size: 0.9rem;
+}
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 0.5em;
+  font: 0.75rem var(--ff-sans);
   background: var(--clr-neutral-400);
-  padding: 0.125em;
   color: var(--clr-neutral-100);
+  border: 0px;
   border-radius: 3px;
+  pointer-events: none;
   opacity: 0;
-  transition: all 1s ease-in;
-}
-.bar:hover .bar__amount {
-  opacity: 1;
 }
 .card__details-footer {
   display: flex;
@@ -122,15 +124,13 @@ h1 {
 }
 .total p:nth-child(2) {
   font-size: 1.25rem;
-  font-weight: 700;
-  margin-top:.5rem;
+  font-weight: var(--fw-700);
 }
 .percentage {
   text-align: right;
 }
 .percentage p:nth-child(1) {
-margin-bottom:.5rem;
-  font-weight: 700;
+  font-weight: var(--fw-700);
 }
 .attribution {
   margin-top: 1rem;

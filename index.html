@@ -20,20 +20,34 @@
             <p><small>My balance</small></p>
             <p>$921.48</p>
           </div>
-          <div class="card__balance-circle"></div>
+          <div class="logo">
+            <svg
+              id="logo-svg"
+              width="72"
+              height="48"
+              viewBox="0 0 72 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#382314" cx="48" cy="24" r="24" />
+                <circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23" />
+              </g>
+            </svg>
+          </div>
         </div>
         <div class="card__details">
-          <h1>Spending - Last 7 days</h1>
-          <div class="bars"></div>
+          <h1 class="text-dark">Spending - Last 7 days</h1>
+          <div class="bars__wrapper"></div>
+          <div id="tooltip" class="tooltip"></div>
           <hr />
           <div class="card__details-footer">
             <div class="total">
-              <p>Total this month</p>
-              <p>$478.33</p>
+              <p class="text-light">Total this month</p>
+              <p class="text-dark">$478.33</p>
             </div>
             <div class="percentage">
-              <p>+2.4%</p>
-              <p><small>from last month</small></p>
+              <p class="text-dark">+2.4%</p>
+              <p class="text-light"><small>from last month</small></p>
             </div>
           </div>
           <div class="attribution">
@@ -47,6 +61,12 @@
         </div>
       </div>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
+      integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="app.js"></script>
   </body>
 </html>
