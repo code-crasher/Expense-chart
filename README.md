@@ -23,15 +23,15 @@ The Expense Chart project visualizes daily expenses using a bar chart. It fetche
 expense-chart/
 ├── data.json
 ├── index.html
-├── script.js
-├── styles.css
+├── app.js
+├── style.css
 └── README.md
 ```
 
 - `data.json`: Contains the sample expense data in JSON format.
 - `index.html`: The main HTML file that sets up the structure of the web page.
-- `script.js`: Contains the JavaScript code to fetch the data and create the D3.js chart.
-- `styles.css`: Contains the CSS styles for the project.
+- `app.js`: Contains the JavaScript code to fetch the data and create the D3.js chart.
+- `style.css`: Contains the CSS styles for the project.
 - `README.md`: The file you are currently reading, which explains the project.
 
 ## Features
@@ -47,7 +47,7 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/expense-chart.git
+   git clone https://github.com/code-crasher/Expense-chart/tree/main
    ```
 
 2. Navigate to the project directory:
